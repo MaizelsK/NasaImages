@@ -1,0 +1,31 @@
+﻿<Window x:Class="NasaImages.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:local="clr-namespace:NasaImages"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Background="#FF0E1A34">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
+
+        <ProgressBar Name="Progress" Height="20" Width="200" Margin="0,0,0,30" Foreground="Wheat"/>
+
+        <Image Name="imageHost"
+               Margin="10,10,10,40"/>
+        <cefSharp:ChromiumWebBrowser Name="videoHost"
+               Margin="10,10,10,40"/>
+        <TextBlock Name="ImageText" Text="Image name" HorizontalAlignment="Center" Foreground="Wheat"
+                       Margin="0,5,0,10" Padding="10,2,10,2" VerticalAlignment="Bottom"/>
+
+        <DatePicker Name="DatePicker" Grid.Row="1" HorizontalAlignment="Left" Margin="20,10,0,0"
+                    Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="29" VerticalAlignment="Top"/>
+
+        <Button Name="loadButton" Content="Загрузить" Margin="0,10,20,10" Padding="5" Width="80" Grid.Row="1"
+                VerticalAlignment="Top" HorizontalAlignment="Right" Click="LoadButton_Click"/>
+    </Grid>
+</Window>
